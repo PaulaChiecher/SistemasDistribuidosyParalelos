@@ -1,6 +1,6 @@
 <div align="center">
 
-# 🕸️ BFS Concurrente sobre Grafos
+#  BFS Concurrente sobre Grafos
 
 ### Del BFS secuencial a un BFS paralelo por niveles: dependencias, condiciones de carrera y rendimiento real
 
@@ -82,7 +82,7 @@ Todo el código está en **Python 3**, usa **solo la biblioteca estándar** para
 
 ---
 
-## 📋 Requisitos
+##  Requisitos
 
 | Requisito | Versión | ¿Obligatorio? |
 |-----------|---------|---------------|
@@ -405,9 +405,9 @@ def bfs_concurrente(adj, origen, ejecutor, trabajadores):
 
 Ventajas de este esquema:
 
-- ✅ **Correcto por construcción**: no hay escrituras concurrentes, así que no hay carreras.
-- ✅ **Simple de razonar y probar**.
-- ✅ **La misma función de trabajador sirve** para hilos y para procesos.
+-  **Correcto por construcción**: no hay escrituras concurrentes, así que no hay carreras.
+-  **Simple de razonar y probar**.
+-  **La misma función de trabajador sirve** para hilos y para procesos.
 
 Su costo: la **unión y el filtrado son secuenciales** (limitan el speedup según la Ley de Amdahl) y cada trabajador devuelve más datos de los necesarios.
 
@@ -604,13 +604,9 @@ gh api -X PUT repos/PaulaChiecher/SistemasDistribuidosyParalelos/collaborators/d
   <tr>
     <td align="center">
       <b>Paula Vanina Chiecher</b><br>
-      <sub>Desarrollo, experimentos y análisis</sub>
     </td>
     <td align="center">
-      <a href="https://github.com/dekuprogramador">
-        <img src="https://github.com/dekuprogramador.png" width="80" alt="@dekuprogramador"><br>
         <b>Carlos Santiago Ledesma</b><br>
-        <sub>@dekuprogramador</sub>
       </a>
     </td>
   </tr>
