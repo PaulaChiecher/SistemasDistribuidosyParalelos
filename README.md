@@ -44,7 +44,7 @@ Paula Vanina Chiecher · [Carlos Santiago Ledesma (@dekuprogramador)](https://gi
 
 ---
 
-## 🎯 ¿De qué se trata?
+##  ¿De qué se trata?
 
 Este trabajo práctico toma el algoritmo de **búsqueda en anchura (BFS)** —clásico, secuencial y fácil de entender— y lo lleva a una versión **concurrente por niveles**, donde varios trabajadores expanden al mismo tiempo la frontera actual del recorrido.
 
@@ -68,17 +68,17 @@ Todo el código está en **Python 3**, usa **solo la biblioteca estándar** para
 
 ---
 
-## ✨ Características principales
+##  Características principales
 
-- 🧩 **Grafo por lista de adyacencia** — memoria `O(n + m)`, ideal para grafos ralos.
-- ⚡ **BFS secuencial** con cola FIFO como línea base.
-- 🔀 **BFS concurrente por niveles** con barrera de sincronización al final de cada nivel.
-- 🧵 **Un mismo diseño para hilos y procesos** (`ThreadPoolExecutor` / `ProcessPoolExecutor`).
-- 🛡️ **Libre de carreras por construcción**: los trabajadores no escriben estado compartido.
-- 🧪 **Demostración reproducible** de la condición de carrera *check-then-act*.
-- ✅ **Verificación de correctitud** contra la línea base y contra propiedades matemáticas del BFS.
-- 📊 **Experimento automatizado**: CSV de resultados + 3 gráficos PNG.
-- 🔁 **Semilla fija** para que cualquier persona obtenga los mismos grafos.
+-  **Grafo por lista de adyacencia** — memoria `O(n + m)`, ideal para grafos ralos.
+-  **BFS secuencial** con cola FIFO como línea base.
+-  **BFS concurrente por niveles** con barrera de sincronización al final de cada nivel.
+-  **Un mismo diseño para hilos y procesos** (`ThreadPoolExecutor` / `ProcessPoolExecutor`).
+-  **Libre de carreras por construcción**: los trabajadores no escriben estado compartido.
+-  **Demostración reproducible** de la condición de carrera *check-then-act*.
+-  **Verificación de correctitud** contra la línea base y contra propiedades matemáticas del BFS.
+-  **Experimento automatizado**: CSV de resultados + 3 gráficos PNG.
+-  **Semilla fija** para que cualquier persona obtenga los mismos grafos.
 
 ---
 
@@ -86,10 +86,10 @@ Todo el código está en **Python 3**, usa **solo la biblioteca estándar** para
 
 | Requisito | Versión | ¿Obligatorio? |
 |-----------|---------|---------------|
-| [Python](https://www.python.org/downloads/) | 3.9 o superior | ✅ Sí |
-| [matplotlib](https://matplotlib.org/) | 3.5 o superior | ⚠️ Solo para generar los gráficos |
+| [Python](https://www.python.org/downloads/) | 3.9 o superior |  Sí |
+| [matplotlib](https://matplotlib.org/) | 3.5 o superior |  Solo para generar los gráficos |
 
-> 💡 El núcleo del trabajo (`grafos.py`) usa **únicamente la biblioteca estándar**. Si no instalás `matplotlib`, el experimento corre igual y simplemente omite los PNG.
+>  El núcleo del trabajo (`grafos.py`) usa **únicamente la biblioteca estándar**. Si no instalás `matplotlib`, el experimento corre igual y simplemente omite los PNG.
 
 Verificá tu instalación:
 
@@ -100,7 +100,7 @@ pip --version
 
 ---
 
-## 📥 Clonar el repositorio
+##  Clonar el repositorio
 
 Reemplazá `PaulaChiecher` en caso de que el repositorio esté en otra cuenta:
 
@@ -138,14 +138,14 @@ pip install -r requirements.txt
 | `source .venv/bin/activate` | Activa el entorno virtual en Linux/macOS. |
 | `pip install -r requirements.txt` | Instala las dependencias listadas en `requirements.txt` (en este caso, `matplotlib`). |
 
-> 🪟 **Si PowerShell bloquea la activación** con un error de *execution policy*, ejecutá una vez:
+>  **Si PowerShell bloquea la activación** con un error de *execution policy*, ejecutá una vez:
 > `Set-ExecutionPolicy -Scope CurrentUser RemoteSigned`
 >
-> 🐧 En Linux/macOS también podés usar `python3` en lugar de `python`.
+>  En Linux/macOS también podés usar `python3` en lugar de `python`.
 
 ---
 
-## 🛠️ Compilar / verificar el código
+##  Compilar / verificar el código
 
 Python es un lenguaje **interpretado**: no existe un paso de compilación como en C o Java. El código se ejecuta directamente con el intérprete.
 
@@ -160,13 +160,13 @@ python -m compileall -q .
 | `python -m compileall -q .` | Recorre todos los `.py` del proyecto y verifica que compilen a *bytecode*. `-q` muestra solo los errores. No genera un ejecutable: es un chequeo de sintaxis. |
 | `python -m py_compile grafos.py experimento.py` | Alternativa: verifica únicamente esos dos archivos. |
 
-Si no imprime nada, **todo está correcto**. ✅
+Si no imprime nada, **todo está correcto**. 
 
-> 🧠 Los archivos `.pyc` que genera viven en `__pycache__/`, que está excluido por `.gitignore`.
+>  Los archivos `.pyc` que genera viven en `__pycache__/`, que está excluido por `.gitignore`.
 
 ---
 
-## ▶️ Uso: todos los comandos explicados
+##  Uso: todos los comandos explicados
 
 ### 1) Demostración, traza y pruebas de correctitud
 
@@ -209,7 +209,7 @@ Salida esperada (resumida):
 Todas las pruebas pasaron.
 ```
 
-> ⏱️ Tarda pocos segundos. Es la forma más rápida de comprobar que todo funciona.
+>  Tarda pocos segundos. Es la forma más rápida de comprobar que todo funciona.
 
 ---
 
@@ -256,7 +256,7 @@ python experimento.py --rapido
 |---------|--------|
 | `--rapido` | Usa `TAMANIOS_RAPIDO` en lugar de `TAMANIOS_COMPLETO`. Termina en segundos. |
 
-> ⚠️ Este comando **sobrescribe** `resultados.csv` y los gráficos con los datos del modo rápido. Si querés conservar los resultados del informe completo, volvé a correr `python experimento.py`.
+>  Este comando **sobrescribe** `resultados.csv` y los gráficos con los datos del modo rápido. Si querés conservar los resultados del informe completo, volvé a correr `python experimento.py`.
 
 ---
 
@@ -271,7 +271,7 @@ python experimento.py --rapido
 
 ---
 
-## 📂 Estructura del proyecto
+##  Estructura del proyecto
 
 ```text
 SistemasDistribuidosyParalelos/
@@ -298,7 +298,7 @@ SistemasDistribuidosyParalelos/
 
 ---
 
-## 🧠 Cómo funciona el algoritmo
+##  Cómo funciona el algoritmo
 
 ### 1) Representación del grafo
 
@@ -315,8 +315,8 @@ def crear_grafo(n, aristas):
 
 | Representación | Memoria | Costo de recorrer vecinos de `u` |
 |----------------|---------|----------------------------------|
-| **Lista de adyacencia** ✅ | `O(n + m)` | `O(grado(u))` |
-| Matriz de adyacencia ❌ | `O(n²)` | `O(n)` |
+| **Lista de adyacencia**  | `O(n + m)` | `O(grado(u))` |
+| Matriz de adyacencia  | `O(n²)` | `O(n)` |
 
 Para grafos ralos como los del experimento (`m ≈ 5n`), la matriz sería inviable: con `n = 200.000` necesitaría 40.000 millones de celdas. Por eso se elige la lista.
 
@@ -350,8 +350,8 @@ def bfs_secuencial(adj, origen):
 
 | Relación | ¿Paralelo? | Motivo |
 |----------|------------|--------|
-| **Dentro de un nivel** | ✅ Sí | Expandir `u` no depende de expandir otro nodo del mismo nivel. |
-| **Entre niveles** | ❌ No | La frontera del nivel `d + 1` recién se conoce cuando terminó todo el nivel `d`. |
+| **Dentro de un nivel** |  Sí | Expandir `u` no depende de expandir otro nodo del mismo nivel. |
+| **Entre niveles** |  No | La frontera del nivel `d + 1` recién se conoce cuando terminó todo el nivel `d`. |
 
 De ahí surge la necesidad de una **barrera de sincronización al final de cada nivel**.
 
@@ -438,8 +438,8 @@ El código lo demuestra de forma **reproducible** usando una `threading.Barrier(
 
 | Versión | Siguiente frontera |
 |---------|--------------------|
-| Sin protección (*check-then-act*) | `[3, 3]` ← nodo duplicado ❌ |
-| Con `lock` y re-chequeo dentro de la sección crítica | `[3]` ✅ |
+| Sin protección (*check-then-act*) | `[3, 3]` ← nodo duplicado  |
+| Con `lock` y re-chequeo dentro de la sección crítica | `[3]`  |
 
 **¿Por qué importa?** Con duplicados, el vector de distancias puede seguir siendo correcto, pero:
 
@@ -456,7 +456,7 @@ En el grafo más grande (`n = 200.000`, `m = 1.000.000`) con 8 trabajadores se d
 | **Lock + re-chequeo** | Sección crítica: `if dist[v] == -1: escribir`. | Serializa en el punto más usado; mucha contención. |
 | **Operación atómica (CAS)** | Marcar `v` como visitado con una instrucción indivisible; solo gana uno. | Necesita soporte del lenguaje (C/Java/atomics); no existe en Python estándar. |
 | **Partición por propietario** | Cada nodo pertenece a un trabajador (`v % k`); los demás le envían `v`. | Comunicación entre trabajadores; es el enfoque de MPI. |
-| **Reunión por el coordinador** ✅ | Los trabajadores devuelven candidatos; el coordinador hace la unión y filtra visitados. | Parte secuencial (Amdahl) y mayor volumen de datos devueltos. |
+| **Reunión por el coordinador**  | Los trabajadores devuelven candidatos; el coordinador hace la unión y filtra visitados. | Parte secuencial (Amdahl) y mayor volumen de datos devueltos. |
 
 Se eligió la **reunión por el coordinador** porque es correcta por construcción, simple de razonar y probar, y funciona igual con hilos o procesos.
 
@@ -474,7 +474,7 @@ La corrección se comprobó de **tres maneras independientes**:
 
 ---
 
-## 📊 Experimentos y resultados
+##  Experimentos y resultados
 
 ### Metodología
 
@@ -487,10 +487,10 @@ La corrección se comprobó de **tres maneras independientes**:
 
 | Nodos (n) | Aristas (m) | Visitados | Distancia máxima | ¿Concurrente = secuencial? |
 |-----------|-------------|-----------|------------------|----------------------------|
-| 1.000 | 5.000 | 1.000 | 4 | ✅ Sí, en todas las configuraciones |
-| 10.000 | 50.000 | 10.000 | 6 | ✅ Sí, en todas las configuraciones |
-| 50.000 | 250.000 | 50.000 | 6 | ✅ Sí, en todas las configuraciones |
-| 200.000 | 1.000.000 | 200.000 | 7 | ✅ Sí, en todas las configuraciones |
+| 1.000 | 5.000 | 1.000 | 4 |  Sí, en todas las configuraciones |
+| 10.000 | 50.000 | 10.000 | 6 |  Sí, en todas las configuraciones |
+| 50.000 | 250.000 | 50.000 | 6 |  Sí, en todas las configuraciones |
+| 200.000 | 1.000.000 | 200.000 | 7 |  Sí, en todas las configuraciones |
 
 Como los grafos son conexos, **se visitan todos los nodos**. La distancia máxima crece muy lentamente (de 4 a 7 al multiplicar por 200 el tamaño): son grafos de **mundo pequeño**. Consecuencia para el paralelismo: **pocas barreras** (pocos niveles) pero **fronteras enormes** en los niveles intermedios (en el grafo más grande, la frontera máxima supera los **119.000 nodos**), es decir, mucho trabajo independiente por nivel.
 
@@ -527,7 +527,7 @@ Como los grafos son conexos, **se visitan todos los nodos**. La distancia máxim
 
 ---
 
-## 🔍 Análisis de los resultados
+##  Análisis de los resultados
 
 **El tiempo crece de forma lineal con `n + m`** en las tres versiones: en el gráfico log-log las curvas son casi rectas de pendiente 1, tal como predice la complejidad `O(n + m)`.
 
@@ -544,7 +544,7 @@ Como los grafos son conexos, **se visitan todos los nodos**. La distancia máxim
 
 ---
 
-## 🏁 Conclusiones
+##  Conclusiones
 
 - BFS tiene **paralelismo natural dentro de cada nivel** y **dependencia estricta entre niveles**; la barrera por nivel es la forma directa de respetarla.
 - El problema central de coordinación es que **un mismo nodo puede ser descubierto por varios trabajadores a la vez**. Es una carrera *check-then-act*: se demostró, se reprodujo y se resolvió con una estrategia de reunión sin escrituras compartidas.
@@ -560,7 +560,7 @@ Como los grafos son conexos, **se visitan todos los nodos**. La distancia máxim
 
 ---
 
-## 🚀 Subir el proyecto a GitHub
+##  Subir el proyecto a GitHub
 
 Si todavía no existe el repositorio remoto, estos son los pasos (desde la carpeta del proyecto):
 
@@ -598,7 +598,7 @@ gh api -X PUT repos/PaulaChiecher/SistemasDistribuidosyParalelos/collaborators/d
 
 ---
 
-## 👥 Autores
+##  Autores
 
 <table>
   <tr>
@@ -620,7 +620,7 @@ Trabajo Práctico realizado en conjunto para la cátedra **Sistemas Distribuidos
 
 ---
 
-## 📚 Referencias
+##  Referencias
 
 - Aho, A. V., Hopcroft, J. E., & Ullman, J. D. — *Data Structures and Algorithms* (BFS y representación de grafos).
 - Herlihy, M., & Shavit, N. — *The Art of Multiprocessor Programming* (condiciones de carrera, *check-then-act*, sincronización).
@@ -632,6 +632,6 @@ Trabajo Práctico realizado en conjunto para la cátedra **Sistemas Distribuidos
 
 <div align="center">
 
-Hecho con ☕ y `concurrent.futures` — **2026**
+Hecho con  y `concurrent.futures` — **2026**
 
 </div>
